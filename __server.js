@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 app.get('/about', about);
 
 app.listen(PORT, () => {
-    console.log('Now listening on port 4500...');
+    console.log(`Now listening on port ${PORT}...`);
 });
 
 module.exports.app = app;
