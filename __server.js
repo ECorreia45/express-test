@@ -8,12 +8,11 @@ app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
 
 hbs.registerPartials(__dirname + '/views/includes');
-hbs.registerHelper('getTitle', () => {
-    return "Express App"
-})
 
 app.get('/', (req, res) => {
-    res.render("index.hbs");
+    res.render("index.hbs",{
+        title: "Express App"
+    });
 });
 
 app.get('/about', about);
