@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let hbs = require('hbs');
 let about = require('./router/about');
+const PORT = process.env.PORT || 4500;
 
 app.set('view engine', 'hbs');
 app.use(express.static(__dirname + '/public'));
@@ -17,8 +18,8 @@ app.get('/', (req, res) => {
 
 app.get('/about', about);
 
-app.listen(3000, () => {
-    console.log('Now listening on port 3000...');
+app.listen(PORT, () => {
+    console.log('Now listening on port 4500...');
 });
 
 module.exports.app = app;
